@@ -1,0 +1,46 @@
+body {
+	/* background-color: lawngreen; */
+}
+
+.container {
+	/* background-color: hotpink; */
+	display: flex;
+	flex-direction: column;
+}
+
+.lists {
+	/* background-color: #282c34; */
+	flex-wrap: wrap;
+	flex-direction: row;
+	align-self: auto;
+	justify-content: space-around;
+	display: inline-flex;
+}
+
+.list-item {
+	margin: 0px;
+	/* background-color: lightblue; */
+	color: black;
+	list-style-type: none;
+}
+
+/* .songlist {
+	background-color: indigo;
+	align-self: flex-start;
+} */
+
+*/ .button-primary {
+	width: 200px;
+	color: black;
+	padding: 14px 20px;
+	margin: 20px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	background-color: lightgray;
+	margin-left: 10px;
+}
+
+.ulList {
+	padding-left: inherit;
+}
