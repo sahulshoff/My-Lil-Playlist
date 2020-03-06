@@ -10,13 +10,7 @@ class List extends React.Component {
 	render() {
 		const { items } = this.props;
 		const ListItems = items.map(item => (
-			<ListItem
-				key={item.id}
-				className="list-item"
-				item={item}
-
-				// onClick={item.handleOnclick}
-			/>
+			<ListItem key={item.id} className="list-item" item={item} />
 		));
 
 		return (

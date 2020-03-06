@@ -1,37 +1,59 @@
 import React, { Component } from "react";
 
 class SongField extends Component {
-	state = {
-		input: ""
-	};
+	constructor() {
+		super();
+		this.state = {
+			input: ""
+		};
+	}
 
 	render() {
-		const onInput = event => {
+		const handleChange = event => {
 			this.setState({
-				input: event.target.value
+				input: event.target.name.value
 			});
 		};
 
 		const onSubmit = e => {
 			e.preventDefault();
-			this.props.onSubmit(this.state.input);
-			this.setState({
-				input: ""
-			});
+
+			alert("Hij doet het");
 		};
 
 		return (
-			<form className="song-input" onSubmit={onSubmit}>
+			<form onSubmit={onSubmit}>
 				<input
-					placeholder="SongTitle"
-					type="search"
-					onChange={onInput}
+					type="text"
 					value={this.state.input}
-					className="input-primary"
-				></input>
-				<button className="button-primary" type="submit">
-					Voeg toe
-				</button>
+					name="title"
+					placeholder="Song Title"
+					onChange={handleChange}
+				/>
+
+				<input
+					type="text"
+					value={this.state.input}
+					name="artist"
+					placeholder="Artist"
+					onChange={handleChange}
+				/>
+
+				<select value={this.state.input} onChange={handleChange} name="genre">
+					<option value="Jazz">Jazz</option>
+					<option value="Blues">Blues</option>
+					<option value="Rock">Rock</option>
+					<option value="HipHop">HipHop</option>
+				</select>
+
+				<select value={this.state.input} onChange={handleChange} name="rating">
+					<option value="1Star">1</option>
+					<option value="2Star">2</option>
+					<option value="3Star">3</option>
+					<option value="4Star">4</option>
+					<option value="5Star">5</option>
+				</select>
+				<button type="submit">Submit</button>
 			</form>
 		);
 	}
